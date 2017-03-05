@@ -50,27 +50,73 @@ int main()
     
     // 用于存放用户输入的字母
     // char a = ''; 会报错
-    char a;
-    int i = 0;
-    cout << "猜错我是哪个字母，最多猜五次喔：" << endl;
-    for(i=0;i<5;i++)
-    {
-        cin >> a;
-        if(a=='G')
-        {
-            cout << "被你猜中了！" << endl;
-            break;
-        }
-        else
-        {
-            cout << "你猜错了！接着猜吧！" << endl;
-        }
-        if(i==4 && a != 'G')
-        {
-            cout << "你已经猜过五次不能再猜了！！！" << endl;
+//    char a;
+//    int i = 0;
+//    cout << "猜错我是哪个字母，最多猜五次喔：" << endl;
+//    for(i=0;i<5;i++)
+//    {
+//        cin >> a;
+//        if(a=='G')
+//        {
+//            cout << "被你猜中了！" << endl;
+//            break;
+//        }
+//        else
+//        {
+//            cout << "你猜错了！接着猜吧！" << endl;
+//        }
+//        if(i==4 && a != 'G')
+//        {
+//            cout << "你已经猜过五次不能再猜了！！！" << endl;
+//        }
+//    }
+    
+    // 冒泡排序算法
+//    int n, a[1000];
+//    cin >> n;
+//    for(int i=0;i<n;i++)
+//    {
+//        cin >> a[i];
+//    }
+//    for(int i=0;i<n-1;i++)
+//    {
+//        for(int j=1;j<n-i;j++)
+//        {
+//            if(a[j-1]>a[j])
+//            {
+//                int temp = a[j];
+//                a[j] = a[j-1];
+//                a[j-1] = temp;
+//            }
+//
+//        }
+//    }
+//    for(int i=0;i<n;i++)
+//    {
+//        cout << a[i] << endl;
+//    }
+    
+    
+    int a[10];
+    for (int i=0; i<10; i++) {
+        cin >> a[i];
+    }
+    // 冒泡，不断比较相邻的两个数，如果顺序错了，那么就交换
+    for (int i=0; i<9; i++) {
+        for (int j=1; j<10-i; j++) {
+            bool leftIsEven = a[j-1]%2 == 0;
+            bool rightIsEven =a[j]%2 == 0;
+            // 如果左边为偶数，右边为奇数，那么顺序也需要交换
+            if ((leftIsEven && !rightIsEven) || (leftIsEven == rightIsEven && a[j-1] > a[j])) {
+                int temp = a[j];
+                a[j] = a[j-1];
+                a[j-1] = temp;
+            }
         }
     }
-    
+    for (int i=0; i<10; i++) {
+        cout << a[i] << endl;
+    }
     
     
     return 0;
