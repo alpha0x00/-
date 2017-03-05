@@ -246,6 +246,7 @@
 				50E989881E6BFF7100E659CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
