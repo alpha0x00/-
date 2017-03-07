@@ -97,25 +97,54 @@ int main()
 //    }
     
     
-    int a[10];
-    for (int i=0; i<10; i++) {
-        cin >> a[i];
-    }
-    // 冒泡，不断比较相邻的两个数，如果顺序错了，那么就交换
-    for (int i=0; i<9; i++) {
-        for (int j=1; j<10-i; j++) {
-            bool leftIsEven = a[j-1]%2 == 0;
-            bool rightIsEven =a[j]%2 == 0;
-            // 如果左边为偶数，右边为奇数，那么顺序也需要交换
-            if ((leftIsEven && !rightIsEven) || (leftIsEven == rightIsEven && a[j-1] > a[j])) {
-                int temp = a[j];
-                a[j] = a[j-1];
-                a[j-1] = temp;
+//    int a[10];
+//    for (int i=0; i<10; i++) {
+//        cin >> a[i];
+//    }
+//    // 冒泡，不断比较相邻的两个数，如果顺序错了，那么就交换
+//    for (int i=0; i<9; i++) {
+//        for (int j=1; j<10-i; j++) {
+//            bool leftIsEven = a[j-1]%2 == 0;
+//            bool rightIsEven =a[j]%2 == 0;
+//            // 如果左边为偶数，右边为奇数，那么顺序也需要交换
+//            if ((leftIsEven && !rightIsEven) || (leftIsEven == rightIsEven && a[j-1] > a[j])) {
+//                int temp = a[j];
+//                a[j] = a[j-1];
+//                a[j-1] = temp;
+//            }
+//        }
+//    }
+//    for (int i=0; i<10; i++) {
+//        cout << a[i] << endl;
+//    }
+    
+//    int nFeet;
+//    cin >> nFeet;
+////    for (i=0; i<nFeet/2; i++) {
+////        cin >> nFeet;
+//        if (nFeet % 2 != 0)
+//        {
+//            cout << "0 0" << endl;
+//        }
+//        else if (nFeet % 4 != 0)
+//        {
+//            cout << nFeet/4+1 << " " << nFeet/2 << endl;
+//        }
+//        else
+//            cout << nFeet/4 << " " << nFeet/2 << endl;
+////    }
+    
+    
+    int x,y,z;
+    cout << "\t母鸡\t\t 公鸡\t\t 小鸡\t\t";
+    for (x=0; x<=100; x++) {
+        for (y=0; y<=100; y++) {
+            for (z=0; z<=100; z++) {
+                if ((x+y+z)==100 && (3*x+2*y+0.5*z)==100) {
+                    cout << "\t" << x << "\t\t" << y << "\t\t" << z << endl;
+                }
             }
         }
-    }
-    for (int i=0; i<10; i++) {
-        cout << a[i] << endl;
     }
     
     
